@@ -24,4 +24,4 @@ _get_inside_index方法用于计算完全位于指定大小的图像内部的Anc
 
 # YOLO代码补充
 运行结果如图
-![Alt text](../YOLO/imgs/demo_result.jpg)
+![Alt text](./YOLO/imgs/demo_result.jpg)
