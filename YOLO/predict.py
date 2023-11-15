@@ -100,7 +100,7 @@ def nms(bboxes, scores, threshold=0.5):
         yy1 = torch.max(y1[i], y1[order[1:]])
         xx2 = torch.min(x2[i], x2[order[1:]])
         yy2 = torch.min(y2[i], y2[order[1:]])
-        inter = torch.clamp(xx2 - xx1 + 1, min=0) * torch.clamp(yy2 - yy1 + 1, min=0)
+        inter = torch.clamp(xx2 - xx1 , min=0) * torch.clamp(yy2 - yy1 , min=0)
         ovr = inter / (areas[i] + areas[order[1:]] - inter)
 
         ids = (ovr <= threshold).nonzero(as_tuple=False).squeeze() # 注意此时idx为[N - 1,], 而order为[N, ]
